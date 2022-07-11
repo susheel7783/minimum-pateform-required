@@ -1,0 +1,19 @@
+int calculateMinPatforms(int at[], int dt[], int n) {
+    // Write your code here.
+    sort(at,at+n);
+    sort(dt,dt+n);
+    int plate_needed=0,maxm_plate=0;
+    int i=0,j=0;
+    while(i<n && j<n){
+    if(at[i]<=dt[j]){
+        plate_needed++;
+        i++;
+    }else{
+        plate_needed--;
+        j++;
+    }
+        if(maxm_plate<plate_needed)
+            maxm_plate=plate_needed;
+        }
+    return maxm_plate;
+}
